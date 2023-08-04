@@ -53,11 +53,11 @@ get_latest_release() {
     sed -E 's/.*"([^"]+)".*/\1/'                                                    # Pluck JSON value
 }
 
-if [ -z "${TFSEC_VERSION}" ] || [ "${TFSEC_VERSION}" == "latest" ]; then
+if [ -z "${TFSECURITY_VERSION}" ] || [ "${TFSECURITY_VERSION}" == "latest" ]; then
   echo "Looking up the latest version..."
   version=$(get_latest_release)
 else
-  version=${TFSEC_VERSION}
+  version=${TFSECURITY_VERSION}
 fi
 
 echo "Downloading tfsecurity $version"
@@ -97,7 +97,7 @@ echo -e "\n\n===================================================="
 
 mv "${download_path}/${remote_filename}" "${download_path}/${local_filename}"
 if [[ $remote_filename == *"windows"* ]]; then
-  dest="${TFSEC_INSTALL_PATH:-/bin}/"
+  dest="${TFSECURITY_INSTALL_PATH:-/bin}/"
   echo "Installing ${local_filename} to ${dest}..."
   mv "${download_path}/${local_filename}" "$dest"
   retVal=$?
@@ -108,7 +108,7 @@ if [[ $remote_filename == *"windows"* ]]; then
     echo "tfsecurity installed at ${dest} successfully"
   fi
 else
-  dest="${TFSEC_INSTALL_PATH:-/usr/local/bin}/"
+  dest="${TFSECURITY_INSTALL_PATH:-/usr/local/bin}/"
   echo "Installing ${download_path}/${local_filename} to ${dest}..."
 
   if [[ -w "$dest" ]]; then SUDO=""; else

@@ -128,7 +128,7 @@ var testAssignVariableMatchSpec = MatchSpec{
 		{
 			Name:           "bucket",
 			Action:         "isPresent",
-			AssignVariable: "TFSEC_VAR_BUCKET_NAME",
+			AssignVariable: "TFSECURITY_VAR_BUCKET_NAME",
 		},
 		{
 			Name:   "lifecycle_rule",
@@ -136,7 +136,7 @@ var testAssignVariableMatchSpec = MatchSpec{
 			SubMatch: &MatchSpec{
 				Name:       "id",
 				Action:     "startsWith",
-				MatchValue: "TFSEC_VAR_BUCKET_NAME",
+				MatchValue: "TFSECURITY_VAR_BUCKET_NAME",
 			},
 		},
 	},
