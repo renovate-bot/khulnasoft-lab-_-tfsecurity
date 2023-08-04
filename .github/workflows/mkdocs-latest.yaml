@@ -1,41 +1,44 @@
+#
+# On demand and on vXXX tag push: Deploy the latest documentatio
+#
 name: Deploy the latest documentation
 on:
   workflow_dispatch:
     inputs:
-      version:
-        description: Version to be deployed
+      ref:
+        description: The tag to be released, e.g. v0.0.1
         required: true
-  push:
-    tags:
-      - "v*"
 jobs:
   deploy:
     name: Deploy the latest documentation
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout main
         uses: actions/checkout@v3
         with:
+          ref: ${{ github.event.inputs.ref }}
           fetch-depth: 0
           persist-credentials: true
-      - uses: actions/setup-python@v4
+      - name: Login to docker.io registry
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USER }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - uses: actions/setup-python@v2
         with:
           python-version: 3.x
       - name: Install dependencies
         run: |
-          pip install git+https://${GH_TOKEN}@github.com/squidfunk/mkdocs-material.git@latest
-          pip install -r docs/requirements.txt
+          pip install git+https://${GH_TOKEN}@github.com/squidfunk/mkdocs-material.git
+          pip install mike
+          pip install mkdocs-macros-plugin
         env:
           GH_TOKEN: ${{ secrets.MKDOCS_KHULNASOFT_BOT }}
-      - name: Configure the git user
+      - name: Setup Git
         run: |
-          git config user.name "Md Sulaiman"
-          git config user.email "info@khulnasoft.com"
-      - name: Deploy the latest documents from new tag push
-        if: ${{ github.event.inputs.version == '' }}
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+      - name: Deploy the latest documents
         run: |
-          VERSION=$(echo ${{ github.ref }} | sed -e "s#refs/tags/##g")
-          mike deploy --push --update-aliases $VERSION latest
-      - name: Deploy the latest documents from manual trigger
-        if: ${{ github.event.inputs.version != '' }}
-        run: mike deploy --push --update-aliases ${{ github.event.inputs.version }} latest
+          VERSION="${{ github.event.inputs.ref }}"
+          mike deploy --push --update-aliases ${VERSION%.*} latest
