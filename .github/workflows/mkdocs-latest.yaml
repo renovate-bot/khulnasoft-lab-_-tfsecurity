@@ -30,15 +30,18 @@ jobs:
       - name: Install dependencies
         run: |
           pip install git+https://${GH_TOKEN}@github.com/squidfunk/mkdocs-material.git
-          pip install mike
-          pip install mkdocs-macros-plugin
+          pip install -r docs/requirements.txt
         env:
           GH_TOKEN: ${{ secrets.MKDOCS_KHULNASOFT_BOT }}
-      - name: Setup Git
+      - name: Configure the git user
         run: |
-          git config user.name "github-actions"
-          git config user.email "github-actions@github.com"
-      - name: Deploy the latest documents
+          git config user.name "Md Sulaiman"
+          git config user.email "info@khulnasoft.com"
+      - name: Deploy the latest documents from new tag push
+        if: ${{ github.event.inputs.version == '' }}
         run: |
-          VERSION="${{ github.event.inputs.ref }}"
-          mike deploy --push --update-aliases ${VERSION%.*} latest
+          VERSION=$(echo ${{ github.ref }} | sed -e "s#refs/tags/##g")
+          mike deploy --push --update-aliases $VERSION latest
+      - name: Deploy the latest documents from manual trigger
+        if: ${{ github.event.inputs.version != '' }}
+        run: mike deploy --push --update-aliases ${{ github.event.inputs.version }} latest
