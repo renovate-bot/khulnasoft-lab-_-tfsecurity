@@ -23,14 +23,14 @@ jobs:
           python-version: 3.x
       - name: Install dependencies
         run: |
-          pip install git+https://${GH_TOKEN}@github.com/squidfunk/mkdocs-material-insiders.git@8.3.3-insiders-4.17.2
+          pip install git+https://${GH_TOKEN}@github.com/squidfunk/mkdocs-material.git@latest
           pip install -r docs/requirements.txt
         env:
-          GH_TOKEN: ${{ secrets.MKDOCS_KHULNASOFT_BOT }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Configure the git user
         run: |
-          git config user.name "owenrumney"
-          git config user.email "owen.rumney@khulnasoft.com"
+          git config user.name "Md Sulaiman"
+          git config user.email "info@khulnasoft.com"
       - name: Deploy the latest documents from new tag push
         if: ${{ github.event.inputs.version == '' }}
         run: |
