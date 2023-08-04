@@ -26,7 +26,7 @@ jobs:
           pip install git+https://${GH_TOKEN}@github.com/squidfunk/mkdocs-material.git@latest
           pip install -r docs/requirements.txt
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.MKDOCS_KHULNASOFT_BOT }}
       - name: Configure the git user
         run: |
           git config user.name "Md Sulaiman"
