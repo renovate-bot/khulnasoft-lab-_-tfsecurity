@@ -66,7 +66,7 @@ var noCode bool
 
 func configureFlags(cmd *cobra.Command) {
 	v := viper.New()
-	v.SetEnvPrefix("TFSEC")
+	v.SetEnvPrefix("TFSECURITY")
 	v.SetEnvKeyReplacer(strings.NewReplacer("-", "_"))
 	v.AutomaticEnv()
 	v.SetTypeByDefaultValue(true)

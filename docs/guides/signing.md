@@ -79,7 +79,7 @@ nX5QmAEwF/nBYV3Du7TIvHtz91yL8A==
     check the output is
     ```
     pub  rsa4096 2021-05-20 [SC]       D66B222A3EA4C25D5D1A097FC34ACEFB46EC39CE
-    uid  [ultimate] Tfsec Signing (Code signing for tfsecurity) <signing@tfsecurity.dev>
+    uid  [ultimate] Tfsecurity Signing (Code signing for tfsecurity) <signing@tfsecurity.dev>
     sub  rsa4096 2021-05-20 [E]
     ```
 4. Download the required binary and its associated sig file
@@ -92,6 +92,6 @@ nX5QmAEwF/nBYV3Du7TIvHtz91yL8A==
    ```
    gpg: Signature made Fri 09 Jul 2021 11:41:22 BST
    gpg:                using RSA key D66B222A3EA4C25D5D1A097FC34ACEFB46EC39CE
-   gpg: Good signature from "Tfsec Signing (Code signing for tfsecurity) <signing@tfsecurity.dev>" [ultimate]
+   gpg: Good signature from "Tfsecurity Signing (Code signing for tfsecurity) <signing@tfsecurity.dev>" [ultimate]
 
    ```
