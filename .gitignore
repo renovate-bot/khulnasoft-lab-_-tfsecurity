@@ -1,0 +1,21 @@
+/tfsecurity
+/tfsecurity-docs
+/bin
+/.idea
+vendor/
+
+# ignore windows compiled binary
+/tfsecurity.exe
+/tfsecurity-docs.exe
+/tfsecurity-docs
+/tfsecurity-skeleton
+/.vscode/launch.json
+
+/checkdocs
+
+/coverage.txt
+/dist
+
+.terraform*
+
+/site

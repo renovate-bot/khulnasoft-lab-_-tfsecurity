@@ -1,0 +1,165 @@
+builds:
+  - id: tfsecurity
+    main: ./cmd/tfsecurity
+    binary: tfsecurity
+    ldflags:
+      - "-X github.com/khulnasoft-labs/tfsecurity/version.Version={{.Tag}} -s -w -extldflags '-fno-PIC -static'"
+    env:
+      - CGO_ENABLED=0
+    goos:
+      - linux
+      - windows
+      - darwin
+    goarch:
+      - amd64
+      - arm64
+  - id: tfsecurity-checkgen
+    main: ./cmd/tfsecurity-checkgen
+    binary: tfsecurity-checkgen
+    ldflags:
+      - "-X github.com/khulnasoft-labs/tfsecurity/version.Version={{.Tag}} -s -w -extldflags '-fno-PIC -static'"
+    env:
+      - CGO_ENABLED=0
+    goos:
+      - linux
+      - windows
+      - darwin
+    goarch:
+      - amd64
+      - arm64
+
+snapshot:
+  name_template: "{{ .Tag }}-next"
+
+changelog:
+  sort: asc
+  filters:
+    exclude:
+      - "^docs:"
+      - "^test:"
+
+signs:
+  - artifacts: binary
+    signature: "${artifact}.D66B222A3EA4C25D5D1A097FC34ACEFB46EC39CE.sig"
+
+dockers:
+  - image_templates:
+      ["ghcr.io/khulnasoft-labs/{{ .ProjectName }}:{{ .Tag }}-amd64"]
+    ids:
+      - tfsecurity
+    dockerfile: Dockerfile
+    use: buildx
+    build_flag_templates:
+      - --platform=linux/amd64
+  - image_templates:
+      ["ghcr.io/khulnasoft-labs/{{ .ProjectName }}:{{ .Tag }}-arm64v8"]
+    ids:
+      - tfsecurity
+    goarch: arm64
+    dockerfile: Dockerfile
+    use: buildx
+    build_flag_templates:
+      - --platform=linux/arm64/v8
+  - image_templates:
+      ["ghcr.io/khulnasoft-labs/{{ .ProjectName }}-alpine:{{ .Tag }}-amd64"]
+    ids:
+      - tfsecurity
+    dockerfile: Dockerfile
+    use: buildx
+    build_flag_templates:
+      - --platform=linux/amd64
+  - image_templates:
+      ["ghcr.io/khulnasoft-labs/{{ .ProjectName }}-alpine:{{ .Tag }}-arm64v8"]
+    ids:
+      - tfsecurity
+    goarch: arm64
+    dockerfile: Dockerfile
+    use: buildx
+    build_flag_templates:
+      - --platform=linux/arm64/v8
+  - image_templates:
+      ["ghcr.io/khulnasoft-labs/{{ .ProjectName }}-scratch:{{ .Tag }}-amd64"]
+    ids:
+      - tfsecurity
+    dockerfile: Dockerfile.scratch
+    use: buildx
+    build_flag_templates:
+      - --platform=linux/amd64
+  - image_templates:
+      ["ghcr.io/khulnasoft-labs/{{ .ProjectName }}-scratch:{{ .Tag }}-arm64v8"]
+    ids:
+      - tfsecurity
+    dockerfile: Dockerfile.scratch
+    use: buildx
+    build_flag_templates:
+      - --platform=linux/arm64/v8
+  - image_templates:
+      ["ghcr.io/khulnasoft-labs/{{ .ProjectName }}-ci:{{ .Tag }}-amd64"]
+    ids:
+      - tfsecurity
+    dockerfile: Dockerfile.ci
+    use: buildx
+    build_flag_templates:
+      - --platform=linux/amd64
+  - image_templates:
+      ["ghcr.io/khulnasoft-labs/{{ .ProjectName }}-ci:{{ .Tag }}-arm64v8"]
+    ids:
+      - tfsecurity
+    dockerfile: Dockerfile.ci
+    use: buildx
+    build_flag_templates:
+      - --platform=linux/arm64/v8
+
+docker_manifests:
+  - name_template: "ghcr.io/khulnasoft-labs/{{ .ProjectName }}:{{ .Tag }}"
+    image_templates:
+      - ghcr.io/khulnasoft-labs/{{ .ProjectName }}:{{ .Tag }}-arm64v8
+      - ghcr.io/khulnasoft-labs/{{ .ProjectName }}:{{ .Tag }}-amd64
+  - name_template: "ghcr.io/khulnasoft-labs/{{ .ProjectName }}:latest"
+    image_templates:
+      - ghcr.io/khulnasoft-labs/{{ .ProjectName }}:{{ .Tag }}-arm64v8
+      - ghcr.io/khulnasoft-labs/{{ .ProjectName }}:{{ .Tag }}-amd64
+  - name_template: "ghcr.io/khulnasoft-labs/{{ .ProjectName }}:v{{ .Major }}.{{ .Minor }}"
+    skip_push: auto
+    image_templates:
+      - ghcr.io/khulnasoft-labs/{{ .ProjectName }}:{{ .Tag }}-arm64v8
+      - ghcr.io/khulnasoft-labs/{{ .ProjectName }}:{{ .Tag }}-amd64
+  - name_template: "ghcr.io/khulnasoft-labs/{{ .ProjectName }}-alpine:{{ .Tag }}"
+    image_templates:
+      - ghcr.io/khulnasoft-labs/{{ .ProjectName }}-alpine:{{ .Tag }}-arm64v8
+      - ghcr.io/khulnasoft-labs/{{ .ProjectName }}-alpine:{{ .Tag }}-amd64
+  - name_template: "ghcr.io/khulnasoft-labs/{{ .ProjectName }}-alpine:latest"
+    image_templates:
+      - ghcr.io/khulnasoft-labs/{{ .ProjectName }}-alpine:{{ .Tag }}-arm64v8
+      - ghcr.io/khulnasoft-labs/{{ .ProjectName }}-alpine:{{ .Tag }}-amd64
+  - name_template: "ghcr.io/khulnasoft-labs/{{ .ProjectName }}-alpine:v{{ .Major }}.{{ .Minor }}"
+    skip_push: auto
+    image_templates:
+      - ghcr.io/khulnasoft-labs/{{ .ProjectName }}-alpine:{{ .Tag }}-arm64v8
+      - ghcr.io/khulnasoft-labs/{{ .ProjectName }}-alpine:{{ .Tag }}-amd64
+  - name_template: "ghcr.io/khulnasoft-labs/{{ .ProjectName }}-scratch:{{ .Tag }}"
+    image_templates:
+      - ghcr.io/khulnasoft-labs/{{ .ProjectName }}-scratch:{{ .Tag }}-arm64v8
+      - ghcr.io/khulnasoft-labs/{{ .ProjectName }}-scratch:{{ .Tag }}-amd64
+  - name_template: "ghcr.io/khulnasoft-labs/{{ .ProjectName }}-scratch:latest"
+    image_templates:
+      - ghcr.io/khulnasoft-labs/{{ .ProjectName }}-scratch:{{ .Tag }}-arm64v8
+      - ghcr.io/khulnasoft-labs/{{ .ProjectName }}-scratch:{{ .Tag }}-amd64
+  - name_template: "ghcr.io/khulnasoft-labs/{{ .ProjectName }}-scratch:v{{ .Major }}.{{ .Minor }}"
+    skip_push: auto
+    image_templates:
+      - ghcr.io/khulnasoft-labs/{{ .ProjectName }}-scratch:{{ .Tag }}-arm64v8
+      - ghcr.io/khulnasoft-labs/{{ .ProjectName }}-scratch:{{ .Tag }}-amd64
+  - name_template: "ghcr.io/khulnasoft-labs/{{ .ProjectName }}-ci:{{ .Tag }}"
+    image_templates:
+      - ghcr.io/khulnasoft-labs/{{ .ProjectName }}-ci:{{ .Tag }}-arm64v8
+      - ghcr.io/khulnasoft-labs/{{ .ProjectName }}-ci:{{ .Tag }}-amd64
+  - name_template: "ghcr.io/khulnasoft-labs/{{ .ProjectName }}-ci:latest"
+    image_templates:
+      - ghcr.io/khulnasoft-labs/{{ .ProjectName }}-ci:{{ .Tag }}-arm64v8
+      - ghcr.io/khulnasoft-labs/{{ .ProjectName }}-ci:{{ .Tag }}-amd64
+  - name_template: "ghcr.io/khulnasoft-labs/{{ .ProjectName }}-ci:v{{ .Major }}.{{ .Minor }}"
+    skip_push: auto
+    image_templates:
+      - ghcr.io/khulnasoft-labs/{{ .ProjectName }}-ci:{{ .Tag }}-arm64v8
+      - ghcr.io/khulnasoft-labs/{{ .ProjectName }}-ci:{{ .Tag }}-amd64
