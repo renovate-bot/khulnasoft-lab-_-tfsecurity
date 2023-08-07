@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM FROM alpine:latest
 
 # install git
 RUN apk add --no-cache git
