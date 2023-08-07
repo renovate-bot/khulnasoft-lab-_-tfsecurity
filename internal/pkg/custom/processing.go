@@ -454,7 +454,7 @@ func processMatchValueVariables(matchValue interface{}, variables map[string]str
 	switch matchValue.(type) {
 	case string:
 		matchValueString := fmt.Sprintf("%v", matchValue)
-		re := regexp.MustCompile(`TFSEC_VAR_[A-Z_]+`)
+		re := regexp.MustCompile(`TFSECURITY_VAR_[A-Z_]+`)
 		return re.ReplaceAllStringFunc(matchValueString, func(match string) string {
 			return variables[match]
 		})
