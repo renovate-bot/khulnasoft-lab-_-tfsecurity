@@ -8,12 +8,12 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/khulnasoft-labs/defsec/pkg/formatters"
-	"github.com/khulnasoft-labs/defsec/pkg/providers"
-	"github.com/khulnasoft-labs/defsec/pkg/scan"
-	scanner "github.com/khulnasoft-labs/defsec/pkg/scanners/terraform"
-	"github.com/khulnasoft-labs/tfsecurity/internal/pkg/formatter"
-	"github.com/khulnasoft-labs/tfsecurity/version"
+	"github.com/khulnasoft-lab/defsec/pkg/formatters"
+	"github.com/khulnasoft-lab/defsec/pkg/providers"
+	"github.com/khulnasoft-lab/defsec/pkg/scan"
+	scanner "github.com/khulnasoft-lab/defsec/pkg/scanners/terraform"
+	"github.com/khulnasoft-lab/tfsecurity/internal/pkg/formatter"
+	"github.com/khulnasoft-lab/tfsecurity/version"
 	"github.com/liamg/tml"
 )
 
@@ -54,7 +54,7 @@ func gatherLinks(result scan.Result) []string {
 	} else {
 		docsLink = []string{
 			fmt.Sprintf(
-				"https://khulnasoft-labs.github.io/tfsecurity/%s/checks/%s/%s/%s/",
+				"https://khulnasoft-lab.github.io/tfsecurity/%s/checks/%s/%s/%s/",
 				v,
 				result.Rule().Provider,
 				strings.ToLower(result.Rule().Service),

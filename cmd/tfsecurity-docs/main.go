@@ -6,7 +6,7 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/khulnasoft-labs/defsec/pkg/rules"
+	"github.com/khulnasoft-lab/defsec/pkg/rules"
 
 	"github.com/spf13/cobra"
 )

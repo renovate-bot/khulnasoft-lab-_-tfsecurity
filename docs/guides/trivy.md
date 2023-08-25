@@ -44,4 +44,4 @@ $ tfsecurity <dir> --format <format-type>
 
 We welcome any feedback if you find features that today are not available with Vul misconfigration scanning that are available in tfsecurity. 
 
-[vul]: https://github.com/khulnasoft-labs/vul
+[vul]: https://github.com/khulnasoft-lab/vul

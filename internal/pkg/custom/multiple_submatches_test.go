@@ -3,8 +3,8 @@ package custom
 import (
 	"testing"
 
-	"github.com/khulnasoft-labs/defsec/pkg/providers"
-	"github.com/khulnasoft-labs/defsec/pkg/scan"
+	"github.com/khulnasoft-lab/defsec/pkg/providers"
+	"github.com/khulnasoft-lab/defsec/pkg/scan"
 
 	"github.com/stretchr/testify/assert"
 )

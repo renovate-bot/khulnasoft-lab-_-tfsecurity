@@ -1,7 +1,7 @@
 package custom
 
 import (
-	"github.com/khulnasoft-labs/defsec/pkg/severity"
+	"github.com/khulnasoft-lab/defsec/pkg/severity"
 )
 
 type MatchType string

@@ -638,7 +638,7 @@ go run ./cmd/tfsecurity-checkgen test-check ./example/cmd_checkgen_test-check/.t
 --pass ./example/cmd_checkgen_test-check/pass.tf
 ```
 
-Alternatively, you can install the tfsecurity-checkgen from the [releases page](https://github.com/khulnasoft-labs/tfsecurity/releases)
+Alternatively, you can install the tfsecurity-checkgen from the [releases page](https://github.com/khulnasoft-lab/tfsecurity/releases)
 
 ## Are there limitations?
 At the moment, check `MatchSpec` is limited in the number of check types it can perform, these are as shown in the previous table.

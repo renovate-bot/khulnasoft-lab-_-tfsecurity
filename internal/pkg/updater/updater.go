@@ -8,7 +8,7 @@ import (
 
 	semver "github.com/hashicorp/go-version"
 	"github.com/inconshreveable/go-update"
-	"github.com/khulnasoft-labs/tfsecurity/version"
+	"github.com/khulnasoft-lab/tfsecurity/version"
 )
 
 type githubRelease struct {
@@ -36,7 +36,7 @@ func Update() (string, error) {
 }
 
 func getLatestVersion() (string, error) {
-	resp, err := http.Get("https://api.github.com/repos/khulnasoft-labs/tfsecurity/releases/latest")
+	resp, err := http.Get("https://api.github.com/repos/khulnasoft-lab/tfsecurity/releases/latest")
 	if err != nil {
 		return "", err
 	}
@@ -95,5 +95,5 @@ func resolveDownloadUrl(latest string) string {
 		suffix = ".exe"
 	}
 
-	return fmt.Sprintf("https://github.com/khulnasoft-labs/tfsecurity/releases/download/%s/tfsecurity-%s-%s%s", latest, runtime.GOOS, runtime.GOARCH, suffix)
+	return fmt.Sprintf("https://github.com/khulnasoft-lab/tfsecurity/releases/download/%s/tfsecurity-%s-%s%s", latest, runtime.GOOS, runtime.GOARCH, suffix)
 }

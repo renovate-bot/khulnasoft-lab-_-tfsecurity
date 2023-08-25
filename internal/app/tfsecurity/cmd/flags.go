@@ -10,21 +10,21 @@ import (
 	"strings"
 
 	"github.com/google/uuid"
-	"github.com/khulnasoft-labs/defsec/pkg/scanners/options"
-	"github.com/khulnasoft-labs/tfsecurity/internal/pkg/custom"
+	"github.com/khulnasoft-lab/defsec/pkg/scanners/options"
+	"github.com/khulnasoft-lab/tfsecurity/internal/pkg/custom"
 
-	"github.com/khulnasoft-labs/defsec/pkg/scan"
+	"github.com/khulnasoft-lab/defsec/pkg/scan"
 
 	"github.com/spf13/cobra"
 	"github.com/spf13/pflag"
 	"github.com/spf13/viper"
 
-	scanner "github.com/khulnasoft-labs/defsec/pkg/scanners/terraform"
-	"github.com/khulnasoft-labs/defsec/pkg/severity"
+	scanner "github.com/khulnasoft-lab/defsec/pkg/scanners/terraform"
+	"github.com/khulnasoft-lab/defsec/pkg/severity"
 
-	"github.com/khulnasoft-labs/defsec/pkg/state"
-	"github.com/khulnasoft-labs/tfsecurity/internal/pkg/config"
-	"github.com/khulnasoft-labs/tfsecurity/internal/pkg/legacy"
+	"github.com/khulnasoft-lab/defsec/pkg/state"
+	"github.com/khulnasoft-lab/tfsecurity/internal/pkg/config"
+	"github.com/khulnasoft-lab/tfsecurity/internal/pkg/legacy"
 )
 
 var showVersion bool

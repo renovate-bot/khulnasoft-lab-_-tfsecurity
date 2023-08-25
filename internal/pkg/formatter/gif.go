@@ -1,10 +1,10 @@
 package formatter
 
 import (
-	"github.com/khulnasoft-labs/defsec/pkg/scan"
-	scanner "github.com/khulnasoft-labs/defsec/pkg/scanners/terraform"
+	"github.com/khulnasoft-lab/defsec/pkg/scan"
+	scanner "github.com/khulnasoft-lab/defsec/pkg/scanners/terraform"
 
-	"github.com/khulnasoft-labs/defsec/pkg/formatters"
+	"github.com/khulnasoft-lab/defsec/pkg/formatters"
 	"github.com/liamg/gifwrap/pkg/ascii"
 )
 

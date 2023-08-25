@@ -1,14 +1,14 @@
 site_name: tfsecurity
 
-site_url: https://khulnasoft-labs.github.io/tfsecurity/
+site_url: https://khulnasoft-lab.github.io/tfsecurity/
 
 site_description: A static analysis security scanner for your Terraform code
 
 docs_dir: docs/
 
-repo_name: khulnasoft-labs/tfsecurity
+repo_name: khulnasoft-lab/tfsecurity
 
-repo_url: https://github.com/khulnasoft-labs/tfsecurity
+repo_url: https://github.com/khulnasoft-lab/tfsecurity
 
 edit_uri: ''
 

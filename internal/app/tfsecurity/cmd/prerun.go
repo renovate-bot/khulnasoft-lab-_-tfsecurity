@@ -6,9 +6,9 @@ import (
 	"path/filepath"
 	"runtime"
 
-	"github.com/khulnasoft-labs/tfsecurity/internal/pkg/ignores"
-	"github.com/khulnasoft-labs/tfsecurity/internal/pkg/updater"
-	"github.com/khulnasoft-labs/tfsecurity/version"
+	"github.com/khulnasoft-lab/tfsecurity/internal/pkg/ignores"
+	"github.com/khulnasoft-lab/tfsecurity/internal/pkg/updater"
+	"github.com/khulnasoft-lab/tfsecurity/version"
 	"github.com/liamg/tml"
 	"github.com/spf13/cobra"
 )

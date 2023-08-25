@@ -9,4 +9,4 @@ Thanks to all [contributors][contributors]
 
 [liamg]: https://github.com/liamg
 [owenrumney]: https://github.com/owenrumney
-[contributors]: https://github.com/khulnasoft-labs/tfsecurity/graphs/contributors
+[contributors]: https://github.com/khulnasoft-lab/tfsecurity/graphs/contributors

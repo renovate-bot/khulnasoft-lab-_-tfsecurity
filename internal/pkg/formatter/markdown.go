@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/khulnasoft-labs/defsec/pkg/formatters"
-	"github.com/khulnasoft-labs/defsec/pkg/scan"
+	"github.com/khulnasoft-lab/defsec/pkg/formatters"
+	"github.com/khulnasoft-lab/defsec/pkg/scan"
 )
 
 func Markdown() func(b formatters.ConfigurableFormatter, results scan.Results) error {

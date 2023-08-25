@@ -5,9 +5,9 @@ import (
 	"runtime"
 	"testing"
 
-	"github.com/khulnasoft-labs/defsec/pkg/rules"
-	"github.com/khulnasoft-labs/defsec/pkg/scan"
-	"github.com/khulnasoft-labs/defsec/pkg/state"
+	"github.com/khulnasoft-lab/defsec/pkg/rules"
+	"github.com/khulnasoft-lab/defsec/pkg/scan"
+	"github.com/khulnasoft-lab/defsec/pkg/state"
 	"github.com/stretchr/testify/assert"
 )
 

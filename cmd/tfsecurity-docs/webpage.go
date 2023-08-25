@@ -7,7 +7,7 @@ import (
 	"strings"
 	"text/template"
 
-	"github.com/khulnasoft-labs/defsec/pkg/providers"
+	"github.com/khulnasoft-lab/defsec/pkg/providers"
 )
 
 type templateObject struct {

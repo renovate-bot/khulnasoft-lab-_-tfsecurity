@@ -3,7 +3,7 @@ builds:
     main: ./cmd/tfsecurity
     binary: tfsecurity
     ldflags:
-      - "-X github.com/khulnasoft-labs/tfsecurity/version.Version={{.Tag}} -s -w -extldflags '-fno-PIC -static'"
+      - "-X github.com/khulnasoft-lab/tfsecurity/version.Version={{.Tag}} -s -w -extldflags '-fno-PIC -static'"
     env:
       - CGO_ENABLED=0
     goos:
@@ -17,7 +17,7 @@ builds:
     main: ./cmd/tfsecurity-checkgen
     binary: tfsecurity-checkgen
     ldflags:
-      - "-X github.com/khulnasoft-labs/tfsecurity/version.Version={{.Tag}} -s -w -extldflags '-fno-PIC -static'"
+      - "-X github.com/khulnasoft-lab/tfsecurity/version.Version={{.Tag}} -s -w -extldflags '-fno-PIC -static'"
     env:
       - CGO_ENABLED=0
     goos:
@@ -51,7 +51,7 @@ archives:
 release:
   prerelease: auto
   github:
-    owner: khulnasoft-labs
+    owner: khulnasoft-lab
     name: tfsecurity
 
 dockers:
@@ -179,4 +179,4 @@ announce:
 
   twitter:
     enabled: false
-    message_template: "🎉 tfsecurity {{.Tag}} is available now!! See what's new here - https://github.com/khulnasoft-labs/tfsecurity/releases/tag/{{.Tag}}"
+    message_template: "🎉 tfsecurity {{.Tag}} is available now!! See what's new here - https://github.com/khulnasoft-lab/tfsecurity/releases/tag/{{.Tag}}"

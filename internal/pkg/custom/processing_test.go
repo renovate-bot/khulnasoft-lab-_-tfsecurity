@@ -7,12 +7,12 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/khulnasoft-labs/defsec/pkg/scan"
-	scanner "github.com/khulnasoft-labs/defsec/pkg/scanners/terraform"
-	"github.com/khulnasoft-labs/defsec/pkg/scanners/terraform/parser"
+	"github.com/khulnasoft-lab/defsec/pkg/scan"
+	scanner "github.com/khulnasoft-lab/defsec/pkg/scanners/terraform"
+	"github.com/khulnasoft-lab/defsec/pkg/scanners/terraform/parser"
 	"github.com/liamg/memoryfs"
 
-	"github.com/khulnasoft-labs/defsec/pkg/terraform"
+	"github.com/khulnasoft-lab/defsec/pkg/terraform"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

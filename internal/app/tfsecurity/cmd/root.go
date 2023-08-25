@@ -8,12 +8,12 @@ import (
 	"strings"
 
 	"github.com/Masterminds/semver"
-	debugging "github.com/khulnasoft-labs/defsec/pkg/debug"
-	"github.com/khulnasoft-labs/defsec/pkg/extrafs"
-	scanner "github.com/khulnasoft-labs/defsec/pkg/scanners/terraform"
-	"github.com/khulnasoft-labs/defsec/pkg/scanners/terraform/executor"
-	"github.com/khulnasoft-labs/tfsecurity/internal/pkg/config"
-	"github.com/khulnasoft-labs/tfsecurity/version"
+	debugging "github.com/khulnasoft-lab/defsec/pkg/debug"
+	"github.com/khulnasoft-lab/defsec/pkg/extrafs"
+	scanner "github.com/khulnasoft-lab/defsec/pkg/scanners/terraform"
+	"github.com/khulnasoft-lab/defsec/pkg/scanners/terraform/executor"
+	"github.com/khulnasoft-lab/tfsecurity/internal/pkg/config"
+	"github.com/khulnasoft-lab/tfsecurity/version"
 	"github.com/spf13/cobra"
 )
 

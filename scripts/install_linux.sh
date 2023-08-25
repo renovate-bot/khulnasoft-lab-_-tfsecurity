@@ -48,7 +48,7 @@ mkdir -p $download_path
 echo -e "\n\n===================================================="
 
 get_latest_release() {
-  curl --silent "https://api.github.com/repos/khulnasoft-labs/tfsecurity/releases/latest" | # Get latest release from GitHub api
+  curl --silent "https://api.github.com/repos/khulnasoft-lab/tfsecurity/releases/latest" | # Get latest release from GitHub api
     grep '"tag_name":' |                                                            # Get tag line
     sed -E 's/.*"([^"]+)".*/\1/'                                                    # Pluck JSON value
 }
@@ -67,7 +67,7 @@ download_file() {
   local download_path=${1:?Download path no supplied}   
   local version=${2:?No version supplied}
   local file=${3:?File to download not supplied}
-  curl --fail --silent -L -o "${download_path}/${file}" "https://github.com/khulnasoft-labs/tfsecurity/releases/download/${version}/${file}"
+  curl --fail --silent -L -o "${download_path}/${file}" "https://github.com/khulnasoft-lab/tfsecurity/releases/download/${version}/${file}"
   dl_status=$?
   if [ $dl_status -ne 0 ]; then
     echo "Failed to download ${file}"

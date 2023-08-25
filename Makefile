@@ -53,7 +53,7 @@ fix-typos:
 
 .PHONY: clone-image-github
 clone-image-github:
-	./scripts/clone-images.sh ghcr.io/khulnasoft-labs
+	./scripts/clone-images.sh ghcr.io/khulnasoft-lab
 
 .PHONY: pr-ready
 pr-ready: quality typos
@@ -70,5 +70,5 @@ mkdocs-serve:
 
 .PHONY: update-defsec
 update-defsec:
-	go get github.com/khulnasoft-labs/defsec@latest
+	go get github.com/khulnasoft-lab/defsec@latest
 	go mod tidy

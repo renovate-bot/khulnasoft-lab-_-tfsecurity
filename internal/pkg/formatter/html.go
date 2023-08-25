@@ -5,10 +5,10 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/khulnasoft-labs/defsec/pkg/severity"
+	"github.com/khulnasoft-lab/defsec/pkg/severity"
 
-	"github.com/khulnasoft-labs/defsec/pkg/formatters"
-	"github.com/khulnasoft-labs/defsec/pkg/scan"
+	"github.com/khulnasoft-lab/defsec/pkg/formatters"
+	"github.com/khulnasoft-lab/defsec/pkg/scan"
 )
 
 func HTML() func(b formatters.ConfigurableFormatter, results scan.Results) error {

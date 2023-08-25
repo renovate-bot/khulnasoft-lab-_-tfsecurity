@@ -1,6 +1,6 @@
 package custom
 
-import "github.com/khulnasoft-labs/defsec/pkg/terraform"
+import "github.com/khulnasoft-lab/defsec/pkg/terraform"
 
 type customCheckVariables map[string]string
 

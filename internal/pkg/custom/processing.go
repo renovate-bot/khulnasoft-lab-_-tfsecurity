@@ -5,13 +5,13 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/khulnasoft-labs/defsec/pkg/providers"
+	"github.com/khulnasoft-lab/defsec/pkg/providers"
 	"github.com/zclconf/go-cty/cty"
 	"github.com/zclconf/go-cty/cty/gocty"
 
-	"github.com/khulnasoft-labs/defsec/pkg/rules"
-	"github.com/khulnasoft-labs/defsec/pkg/scan"
-	"github.com/khulnasoft-labs/defsec/pkg/terraform"
+	"github.com/khulnasoft-lab/defsec/pkg/rules"
+	"github.com/khulnasoft-lab/defsec/pkg/scan"
+	"github.com/khulnasoft-lab/defsec/pkg/terraform"
 )
 
 var matchFunctions = map[CheckAction]func(*terraform.Block, *MatchSpec, *customContext) bool{

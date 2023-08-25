@@ -10,13 +10,13 @@ Please review the following resources:
 
 - [ARCHITECTURE.md](ARCHITECTURE.md): A very high level document that gives an overview of the code and aims to answer the question *Where is the code that does X?*
 - [#tfsecurity on KhulnaSoft Slack](https://slack.khulnasoft.com): Come and talk over any questions/suggestions you have with us on Slack!
-- [tfsecurity documentation](https://khulnasoft-labs.github.io/tfsecurity/latest/): General usage documentation and rule information.
+- [tfsecurity documentation](https://khulnasoft-lab.github.io/tfsecurity/latest/): General usage documentation and rule information.
 
 ## :ballot_box_with_check: PR Checklist
 
 - Ensure the build passes locally first with `make pr-ready`.
 - Add a brief description of your change.
-- Link to the issue which the PR resolves. Please [create one](https://github.com/khulnasoft-labs/tfsecurity/issues/new/choose) if necessary.
+- Link to the issue which the PR resolves. Please [create one](https://github.com/khulnasoft-lab/tfsecurity/issues/new/choose) if necessary.
 - Prefix your PR title with one of feat, fix, docs, style, refactor, perf, test, build, ci, chore, revert ([see here](https://github.com/commitizen/conventional-commit-types/blob/v3.0.0/index.json)) as described in [Conventional Commits](https://www.conventionalcommits.org/) e.g. `feat: Add new rule for AWS S3 bucket encryption`.
 - For bonus points, include a gif to maintain reviewer morale.
     
@@ -28,9 +28,9 @@ Don't be afraid to get stuck in and ask us for help if required! For quick assis
 
 ### :fork_and_knife: Step 1: Fork *defsec*
 
-As described in [ARCHITECTURE.md](ARCHITECTURE.md), the rule logic is defined in the [DefSec](https://github.com/khulnasoft-labs/defsec) repository. To add a new rule, we'll need to add it here before pulling it into tfsecurity. 
+As described in [ARCHITECTURE.md](ARCHITECTURE.md), the rule logic is defined in the [DefSec](https://github.com/khulnasoft-lab/defsec) repository. To add a new rule, we'll need to add it here before pulling it into tfsecurity. 
 
-So firstly you'll need to [fork the repository](https://github.com/khulnasoft-labs/defsec/fork) and clone it on your local machine:
+So firstly you'll need to [fork the repository](https://github.com/khulnasoft-lab/defsec/fork) and clone it on your local machine:
 
 ```bash
 # clone your fork of defsec
@@ -44,7 +44,7 @@ git checkout -b my-awesome-new-rule
 
  DefSec already covers most popular cloud providers; with many services, resources and attributes available for each.
 
-The `provider` package contains structs that represent cloud resources, such as [AWS S3 Buckets](https://github.com/khulnasoft-labs/defsec/blob/master/provider/aws/s3/bucket.go#L5). Rules simply check the various properties of these structs without having to worry about the intricacies of Terraform, CloudFormation or whatever was used to define the resources.
+The `provider` package contains structs that represent cloud resources, such as [AWS S3 Buckets](https://github.com/khulnasoft-lab/defsec/blob/master/provider/aws/s3/bucket.go#L5). Rules simply check the various properties of these structs without having to worry about the intricacies of Terraform, CloudFormation or whatever was used to define the resources.
 
 Browse the `provider/` directory to see if your desired provider/service are available. Inside the package for your service, check the defined structs and check that the particular resource (e.g. EC2 Instance) is defined along with the particular attributes you need to check.
 
@@ -54,7 +54,7 @@ If all of the above are already in place, you can skip to *Step 3*. Otherwise, k
     <img alt="Leaky cloud" src="https://media.giphy.com/media/mNG0rIdAYvLog0Wr8H/giphy.gif" />
 </p>
 
-Add structs for your resource(s)/attribute(s)/service/provider as required. These should be accessible via the root [state.State](https://github.com/khulnasoft-labs/defsec/blob/master/state/state.go). If you're adding a brand new provider, you'll need to add a property here. Otherwise just make sure you can access it via the relevant property.
+Add structs for your resource(s)/attribute(s)/service/provider as required. These should be accessible via the root [state.State](https://github.com/khulnasoft-lab/defsec/blob/master/state/state.go). If you're adding a brand new provider, you'll need to add a property here. Otherwise just make sure you can access it via the relevant property.
 
 You'll notice that most properties on these structs use things like `types.String` instead of a regular Go `string`. This is because these special types have to store more than the relevant string value - they also contain metadata about where this value was defined - e.g. *The `Name` of this S3 Bucket was defined in main.tf on line 6*. 
 
@@ -104,7 +104,7 @@ Fill out the `rules.Rule` struct with appropriate information. The fields are de
 | Field            | Description |
 | ---------------- | ----------- |
 | AVDID            | This is a unique ID that identifies the rule not just within DefSec, but within the [AVD](https://avd.khulnasoft.com/). The ID is composed of the prefix `AVD-`, three letters representing the provider in capitals e.g. `AWS`, another `-`, and then a 4-digit, zero-padded number. For example: `AVD-AWS-0086`. The easiest way to assign a new AVD ID is to run `grep -r "AVD-" . | grep AVDID | awk -F'"' '{print $2}' | sort -u` to find the highest number for your provider and increment it by one.
-| Provider         | You can set this using a constant from the `provider` package, listed [here](https://github.com/khulnasoft-labs/defsec/blob/master/provider/providers.go#L8-L21)
+| Provider         | You can set this using a constant from the `provider` package, listed [here](https://github.com/khulnasoft-lab/defsec/blob/master/provider/providers.go#L8-L21)
 | Service          | A string representing the service your rule relates to (lower-case), e.g. `s3`. This will generally match the package your rule is inside.
 | ShortCode        | This is a human-readable identifier for your check that uniquely describes it within the provider and service. e.g. `block-public-acls`
 | Summary          | A short paragraph that summarises what best-practice the rule is trying to enforce. e.g. *Data stored in service X should be encrypted at rest*
@@ -124,7 +124,7 @@ We use the following guide to approximate severity:
 | Medium   | Best practice has not been followed that impacts the security posture of the organisation. | "Force destroy" is enabled on a bucket.               |
 | Low      | Best practice has not been followed, which decreases operational efficiency.       | Description missing on security group rule.           |
 
-Next up, it's time to write some tests. You can copy the [Google BigQuery tests](https://github.com/khulnasoft-labs/defsec/blob/master/rules/google/bigquery/no_public_access_test.go) as a starting point. 
+Next up, it's time to write some tests. You can copy the [Google BigQuery tests](https://github.com/khulnasoft-lab/defsec/blob/master/rules/google/bigquery/no_public_access_test.go) as a starting point. 
 
 The tests should take a provider *service* struct as an input, apply the rule, and check that the rule had a positive/negative result as required.
 
@@ -144,17 +144,17 @@ All of the structs that describe a Terraform project are passed to the *adapters
 
 Your adapter will receive a list of Terraform modules which you can traverse to find particular blocks, attributes etc., and manufacture a series of defsec structs to return. You can see how this works by reviewing some of the many existing implementations.
 
-Whilst the end-to-end tests will automatically cover your new rule and adapter, it's recommended to also add a more granular set of tests for your adaptation code. You can [check out some examples of this](https://github.com/khulnasoft-labs/defsec/tree/master/adapters/terraform/aws/apigateway) to get some inspiration. Or some copy and paste fuel.
+Whilst the end-to-end tests will automatically cover your new rule and adapter, it's recommended to also add a more granular set of tests for your adaptation code. You can [check out some examples of this](https://github.com/khulnasoft-lab/defsec/tree/master/adapters/terraform/aws/apigateway) to get some inspiration. Or some copy and paste fuel.
 
 ### Step 5: Create your *defsec* Pull Request 
 
-Once your tests pass, it's time to [raise a pull request](https://github.com/khulnasoft-labs/defsec/compare)!
+Once your tests pass, it's time to [raise a pull request](https://github.com/khulnasoft-lab/defsec/compare)!
 
-You can see a good example of a PR for a new defsec rule [here](https://github.com/khulnasoft-labs/defsec/pull/115/files).
+You can see a good example of a PR for a new defsec rule [here](https://github.com/khulnasoft-lab/defsec/pull/115/files).
 
 At this point you're waiting on us to review and merge your pull request. We're aiming to get to all pull requests within days in the post version 1 world, but often much faster - you can often chat to us on Slack to accelerate the process.
 
-While waiting you can [fork the tfsecurity repository](https://github.com/khulnasoft-labs/tfsecurity/fork) and clone it on your local machine to prepare for the next step:
+While waiting you can [fork the tfsecurity repository](https://github.com/khulnasoft-lab/tfsecurity/fork) and clone it on your local machine to prepare for the next step:
 
 ```bash
 # clone your fork of tfsecurity
@@ -167,13 +167,13 @@ After merging a defsec PR we'll create a tag straight away - we generally releas
 
 ### :arrow_down: Step 6: Apply the New Rule in *tfsecurity*
 
-> NOTE: If you'd like to earn bonus points and support running your rule against *CloudFormation*, you can repeat this step in the [cfsec](https://github.com/khulnasoft-labs/cfsec) repository - if not we'll get to it eventually and make sure your rule runs everywhere!
+> NOTE: If you'd like to earn bonus points and support running your rule against *CloudFormation*, you can repeat this step in the [cfsec](https://github.com/khulnasoft-lab/cfsec) repository - if not we'll get to it eventually and make sure your rule runs everywhere!
 
 Update the version of defsec that is used by tfsecurity:
 
 ```bash
 # in your tfsecurity repo directory
-go get github.com/khulnasoft-labs/defsec@latest
+go get github.com/khulnasoft-lab/defsec@latest
 go mod vendor
 ```
 
@@ -204,7 +204,7 @@ make pr-ready
 
 This will run some linters, run the tests and replicate the checks we apply in CI so you can ensure the build passes locally before pushing your code.
 
-Now you're ready to [raise the pull request](https://github.com/khulnasoft-labs/tfsecurity/compare). We'll try to review it as soon as possible, but if it's taking longer than you'd like, feel free to chat to us on Slack.
+Now you're ready to [raise the pull request](https://github.com/khulnasoft-lab/tfsecurity/compare). We'll try to review it as soon as possible, but if it's taking longer than you'd like, feel free to chat to us on Slack.
 
 ### :partying_face: Step 7: Relax
 

@@ -8,12 +8,12 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/khulnasoft-labs/defsec/pkg/scan"
+	"github.com/khulnasoft-lab/defsec/pkg/scan"
 
-	"github.com/khulnasoft-labs/defsec/pkg/scanners/terraform"
+	"github.com/khulnasoft-lab/defsec/pkg/scanners/terraform"
 
 	survey "github.com/AlecAivazis/survey/v2"
-	"github.com/khulnasoft-labs/tfsecurity/internal/pkg/custom"
+	"github.com/khulnasoft-lab/tfsecurity/internal/pkg/custom"
 	"github.com/spf13/cobra"
 )
 

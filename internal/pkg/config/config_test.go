@@ -5,7 +5,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/khulnasoft-labs/tfsecurity/internal/pkg/config"
+	"github.com/khulnasoft-lab/tfsecurity/internal/pkg/config"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

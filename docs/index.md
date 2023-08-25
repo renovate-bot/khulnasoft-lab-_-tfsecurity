@@ -11,7 +11,7 @@ hide:
 
 ## 📣 tfsecurity to Vul Migration
 
-As part of our goal to provide a comprehensive open source security solution for all, we have been consolidating all of our scanning-related efforts in one place, and that is [Vul](https://github.com/khulnasoft-labs/vul). 
+As part of our goal to provide a comprehensive open source security solution for all, we have been consolidating all of our scanning-related efforts in one place, and that is [Vul](https://github.com/khulnasoft-lab/vul). 
 
 Over the past year, tfsecurity has laid the foundations to Vul's IaC & misconfigurations scanning capabilities, including Terraform scanning, which has been natively supported in Vul for a long time now.
 
@@ -24,7 +24,7 @@ tfsecurity will continue to remain available for the time being, although our en
 
 ## tfsecurity to Vul migration guide
 
-For further information on how Vul compares to tfsecurity and moving from tfsecurity to Vul, do have a look at the [migration guide.](https://github.com/khulnasoft-labs/tfsecurity/blob/master/tfsecurity-to-vul-migration-guide.md)
+For further information on how Vul compares to tfsecurity and moving from tfsecurity to Vul, do have a look at the [migration guide.](https://github.com/khulnasoft-lab/tfsecurity/blob/master/tfsecurity-to-vul-migration-guide.md)
 
 ## tfsecurity
 
@@ -50,4 +50,4 @@ Contact us about any matter by opening a GitHub Discussion [here][discussions]
 
 [khulnasoft]: https://khulnasoft.com
 [oss]: https://www.khulnasoft.com/products/open-source-projects/
-[discussions]: https://github.com/khulnasoft-labs/tfsecurity/discussions
+[discussions]: https://github.com/khulnasoft-lab/tfsecurity/discussions

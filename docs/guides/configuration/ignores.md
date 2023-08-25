@@ -103,5 +103,5 @@ In the example above, the `aws-vpc-no-public-ingress-sgr` check will fail for `8
 
 This feature is experimental - while it works successfully, please raise issues through [GitHub Issues]
 
-[Github Issues]: https://github.com/khulnasoft-labs/tfsecurity/issues
+[Github Issues]: https://github.com/khulnasoft-lab/tfsecurity/issues
 

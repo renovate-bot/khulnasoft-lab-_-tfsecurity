@@ -8,7 +8,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/khulnasoft-labs/defsec/pkg/severity"
+	"github.com/khulnasoft-lab/defsec/pkg/severity"
 	"gopkg.in/yaml.v2"
 )
 

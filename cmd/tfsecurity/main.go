@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/khulnasoft-labs/tfsecurity/internal/app/tfsecurity/cmd"
+	"github.com/khulnasoft-lab/tfsecurity/internal/app/tfsecurity/cmd"
 )
 
 const transitionMsg = `
@@ -17,7 +17,7 @@ for the time being, although our engineering
 attention will be directed at Vul going forward.
 
 You can read more here: 
-https://github.com/khulnasoft-labs/tfsecurity/discussions/1994
+https://github.com/khulnasoft-lab/tfsecurity/discussions/1994
 ======================================================
 `
 

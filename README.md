@@ -1,4 +1,4 @@
-[![GoReportCard](https://goreportcard.com/badge/github.com/khulnasoft-labs/tfsecurity)](https://goreportcard.com/report/github.com/khulnasoft-labs/tfsecurity)
+[![GoReportCard](https://goreportcard.com/badge/github.com/khulnasoft-lab/tfsecurity)](https://goreportcard.com/report/github.com/khulnasoft-lab/tfsecurity)
 [![Docker Build](https://img.shields.io/docker/v/khulnasoft/tfsecurity?label=docker)](https://hub.docker.com/r/khulnasoft/tfsecurity)
 [![Chocolatey](https://img.shields.io/chocolatey/v/tfsecurity)](https://chocolatey.org/packages/tfsecurity)
 
@@ -17,7 +17,7 @@ tfsecurity uses static analysis of your terraform code to spot potential misconf
 - :page_with_curl: Supports multiple output formats: lovely (default), JSON, SARIF, CSV, CheckStyle, JUnit, text, Gif.
 - :hammer_and_wrench: Configurable (via CLI flags and/or config file)
 - :zap: Very fast, capable of quickly scanning huge repositories
-- :electric_plug: Plugins for popular IDEs available ([JetBrains](https://plugins.jetbrains.com/plugin/18687-tfsecurity-findings-explorer), [VSCode](https://marketplace.visualstudio.com/items?itemName=tfsecurity.tfsecurity) and [Vim](https://github.com/khulnasoft-labs/vim-tfsecurity))
+- :electric_plug: Plugins for popular IDEs available ([JetBrains](https://plugins.jetbrains.com/plugin/18687-tfsecurity-findings-explorer), [VSCode](https://marketplace.visualstudio.com/items?itemName=tfsecurity.tfsecurity) and [Vim](https://github.com/khulnasoft-lab/vim-tfsecurity))
 
 ## Recommended by Thoughtworks
 
@@ -47,22 +47,22 @@ scoop install tfsecurity
 Bash script (Linux):
 
 ```console
-curl -s https://raw.githubusercontent.com/khulnasoft-labs/tfsecurity/master/scripts/install_linux.sh | bash
+curl -s https://raw.githubusercontent.com/khulnasoft-lab/tfsecurity/master/scripts/install_linux.sh | bash
 ```
 
-You can also grab the binary for your system from the [releases page](https://github.com/khulnasoft-labs/tfsecurity/releases).
+You can also grab the binary for your system from the [releases page](https://github.com/khulnasoft-lab/tfsecurity/releases).
 
 Alternatively, install with Go:
 
 ```bash
-go install github.com/khulnasoft-labs/tfsecurity/cmd/tfsecurity@latest
+go install github.com/khulnasoft-lab/tfsecurity/cmd/tfsecurity@latest
 ```
 
 Please note that using `go install` will install directly from the `master` branch and version numbers will not be reported via `tfsecurity --version`.
 
 ### Signing
 
-The binaries on the [releases page](https://github.com/khulnasoft-labs/tfsecurity/releases) are signed with the tfsecurity signing key `D66B222A3EA4C25D5D1A097FC34ACEFB46EC39CE`
+The binaries on the [releases page](https://github.com/khulnasoft-lab/tfsecurity/releases) are signed with the tfsecurity signing key `D66B222A3EA4C25D5D1A097FC34ACEFB46EC39CE`
 
 Form more information check the [signing page](SIGNING.md) for instructions on verification.
 
@@ -159,15 +159,15 @@ tfsecurity supports many popular cloud and platform providers
 
 | Checks                                                                                  |
 |:----------------------------------------------------------------------------------------|
-| [AWS Checks](https://khulnasoft-labs.github.io/tfsecurity/latest/checks/aws/)                   |
-| [Azure Checks](https://khulnasoft-labs.github.io/tfsecurity/latest/checks/azure/)               |
-| [GCP Checks](https://khulnasoft-labs.github.io/tfsecurity/latest/checks/google/)                |
-| [CloudStack Checks](https://khulnasoft-labs.github.io/tfsecurity/latest/checks/cloudstack/)     |
-| [DigitalOcean Checks](https://khulnasoft-labs.github.io/tfsecurity/latest/checks/digitalocean/) |
-| [GitHub Checks](https://khulnasoft-labs.github.io/tfsecurity/latest/checks/github/)             |
-| [Kubernetes Checks](https://khulnasoft-labs.github.io/tfsecurity/latest/checks/kubernetes/)     |
-| [OpenStack Checks](https://khulnasoft-labs.github.io/tfsecurity/latest/checks/openstack/)       |
-| [Oracle Checks](https://khulnasoft-labs.github.io/tfsecurity/latest/checks/oracle/)             |
+| [AWS Checks](https://khulnasoft-lab.github.io/tfsecurity/latest/checks/aws/)                   |
+| [Azure Checks](https://khulnasoft-lab.github.io/tfsecurity/latest/checks/azure/)               |
+| [GCP Checks](https://khulnasoft-lab.github.io/tfsecurity/latest/checks/google/)                |
+| [CloudStack Checks](https://khulnasoft-lab.github.io/tfsecurity/latest/checks/cloudstack/)     |
+| [DigitalOcean Checks](https://khulnasoft-lab.github.io/tfsecurity/latest/checks/digitalocean/) |
+| [GitHub Checks](https://khulnasoft-lab.github.io/tfsecurity/latest/checks/github/)             |
+| [Kubernetes Checks](https://khulnasoft-lab.github.io/tfsecurity/latest/checks/kubernetes/)     |
+| [OpenStack Checks](https://khulnasoft-lab.github.io/tfsecurity/latest/checks/openstack/)       |
+| [Oracle Checks](https://khulnasoft-lab.github.io/tfsecurity/latest/checks/oracle/)             |
 
 ## Running in CI
 
@@ -202,12 +202,12 @@ We always welcome contributions; big or small, it can be documentation updates, 
 
 ### Some People who have contributed
 
-<a href = "https://github.com/khulnasoft-labs/tfsecurity/graphs/contributors">
-  <img src = "https://contrib.rocks/image?repo=khulnasoft-labs/tfsecurity"/>
+<a href = "https://github.com/khulnasoft-lab/tfsecurity/graphs/contributors">
+  <img src = "https://contrib.rocks/image?repo=khulnasoft-lab/tfsecurity"/>
 </a>
 
 Made with [contributors-img](https://contrib.rocks).
 
 `tfsecurity` is an [KhulnaSoft Security](https://khulnasoft.com) open source project.
 Learn about our open source work and portfolio [here](https://www.khulnasoft.com/products/open-source-projects/).
-Join the community, and talk to us about any matter in [GitHub Discussion](https://github.com/khulnasoft-labs/tfsecurity/discussions)
+Join the community, and talk to us about any matter in [GitHub Discussion](https://github.com/khulnasoft-lab/tfsecurity/discussions)
