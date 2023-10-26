@@ -6,7 +6,7 @@
 #tfsecurity:ignore:AWS052:exp:2025-02-02
 module "db" {
   source  = "terraform-aws-modules/rds/aws"
-  version = "~> 2.0"
+  version = "~> 6.0"
 
   identifier = "demodb"
 
