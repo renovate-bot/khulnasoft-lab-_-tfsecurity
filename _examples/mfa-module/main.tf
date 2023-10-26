@@ -6,7 +6,7 @@ resource aws_iam_group support {
 
 module enforce_mfa {
   source  = "terraform-module/enforce-mfa/aws"
-  version = "0.12.0"
+  version = "0.13.0"
 
   policy_name                     = "managed-mfa-enforce"
   account_id                      = data.aws_caller_identity.current.id
