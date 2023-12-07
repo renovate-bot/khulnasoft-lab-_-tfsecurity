@@ -9,8 +9,8 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/google/uuid"
 	"github.com/aquasecurity/defsec/pkg/scanners/options"
+	"github.com/google/uuid"
 	"github.com/khulnasoft-lab/tfsecurity/internal/pkg/custom"
 
 	"github.com/aquasecurity/defsec/pkg/scan"
