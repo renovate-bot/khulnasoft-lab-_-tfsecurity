@@ -70,5 +70,5 @@ mkdocs-serve:
 
 .PHONY: update-defsec
 update-defsec:
-	go get github.com/khulnasoft-lab/defsec@latest
+	go get github.com/aquasecurity/defsec@latest
 	go mod tidy
