@@ -12,7 +12,7 @@ import (
 
 	"github.com/owenrumney/go-sarif/v2/sarif"
 
-	"github.com/khulnasoft-lab/defsec/pkg/scan"
+	"github.com/aquasecurity/defsec/pkg/scan"
 	"github.com/khulnasoft-lab/tfsecurity/internal/app/tfsecurity/cmd"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

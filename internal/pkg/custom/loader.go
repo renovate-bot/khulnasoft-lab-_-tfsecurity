@@ -9,7 +9,7 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/khulnasoft-lab/defsec/pkg/severity"
+	"github.com/aquasecurity/defsec/pkg/severity"
 	"gopkg.in/yaml.v2"
 )
 

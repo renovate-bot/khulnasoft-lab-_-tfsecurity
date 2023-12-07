@@ -3,7 +3,7 @@ package custom
 import (
 	"fmt"
 
-	"github.com/khulnasoft-lab/defsec/pkg/terraform"
+	"github.com/aquasecurity/defsec/pkg/terraform"
 )
 
 func checkTags(block *terraform.Block, spec *MatchSpec, customCtx *customContext) bool {
