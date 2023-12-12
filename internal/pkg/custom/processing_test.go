@@ -276,7 +276,11 @@ resource "aws_ami" "example" {
 	for _, test := range tests {
 		t.Run(test.name, func(t *testing.T) {
 			block := parseFromSource(t, test.source)[0].GetBlocks()[0]
-			result := evalMatchSpec(block, &test.predicateMatchSpec, NewEmptyCustomContext())
+
+			// Create local copies of relevant variables to avoid implicit memory aliasing
+			predicateMatchSpec := test.predicateMatchSpec
+			result := evalMatchSpec(block, &predicateMatchSpec, NewEmptyCustomContext())
+
 			assert.Equal(t, test.expected, result, "`Or` match function evaluating incorrectly.")
 		})
 	}
