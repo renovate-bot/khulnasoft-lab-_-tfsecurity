@@ -1,9 +1,9 @@
-# Moving towards configuration scanning with Vul
-Overtime we've taken [vul][vul] to be the go-to scanning tool for a vareity of things. This also includes terraform scanning.
+# Moving towards configuration scanning with Tunnel
+Overtime we've taken [tunnel][tunnel] to be the go-to scanning tool for a vareity of things. This also includes terraform scanning.
 
-This section describes some differences between Vul and tfsecurity.
+This section describes some differences between Tunnel and tfsecurity.
 
-| Feature              | Vul                                                  | tfsecurity                |
+| Feature              | Tunnel                                                  | tfsecurity                |
 |----------------------|--------------------------------------------------------|----------------------|
 | Policy Distribution | Embedded and Updated via Registry                      | Embedded             |
 | Custom Policies      | Rego                                                   | Rego, JSON, and YAML |
@@ -12,7 +12,7 @@ This section describes some differences between Vul and tfsecurity.
 
 # Comparison with examples
 ## Simple scan
-### With Vul
+### With Tunnel
 ```shell
 $ vul config <dir>
 ```
@@ -22,7 +22,7 @@ $ tfsecurity <dir>
 ```
 
 ## Passing tfvars
-### With Vul
+### With Tunnel
 ```shell
 $ vul --tf-vars <vars.tf> <dir>
 ```
@@ -32,7 +32,7 @@ $ tfsecurity <dir> --tf-vars-file <vars.tf>
 ```
 
 ## Report formats
-### With Vul
+### With Tunnel
 ```shell
 $ vul config --format <format-type> <dir>
 ```
@@ -42,6 +42,6 @@ $ vul config --format <format-type> <dir>
 $ tfsecurity <dir> --format <format-type>
 ```
 
-We welcome any feedback if you find features that today are not available with Vul misconfigration scanning that are available in tfsecurity. 
+We welcome any feedback if you find features that today are not available with Tunnel misconfigration scanning that are available in tfsecurity. 
 
-[vul]: https://github.com/khulnasoft-lab/vul
+[tunnel]: https://github.com/khulnasoft/tunnel

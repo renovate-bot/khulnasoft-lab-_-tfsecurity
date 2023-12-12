@@ -9,22 +9,22 @@ hide:
 <br/>
 <br/>
 
-## 📣 tfsecurity to Vul Migration
+## 📣 tfsecurity to Tunnel Migration
 
-As part of our goal to provide a comprehensive open source security solution for all, we have been consolidating all of our scanning-related efforts in one place, and that is [Vul](https://github.com/khulnasoft-lab/vul). 
+As part of our goal to provide a comprehensive open source security solution for all, we have been consolidating all of our scanning-related efforts in one place, and that is [Tunnel](https://github.com/khulnasoft/tunnel). 
 
-Over the past year, tfsecurity has laid the foundations to Vul's IaC & misconfigurations scanning capabilities, including Terraform scanning, which has been natively supported in Vul for a long time now.
+Over the past year, tfsecurity has laid the foundations to Tunnel's IaC & misconfigurations scanning capabilities, including Terraform scanning, which has been natively supported in Tunnel for a long time now.
 
-Going forward we want to encourage the tfsecurity community to transition over to Vul. Moving to Vul gives you the same excellent Terraform scanning engine, with some extra benefits:
+Going forward we want to encourage the tfsecurity community to transition over to Tunnel. Moving to Tunnel gives you the same excellent Terraform scanning engine, with some extra benefits:
 
 1. Access to more languages and features in the same tool.
-2. Access to more integrations with tools and services through the rich ecosystem around Vul.
-3. Commercially supported by KhulnaSoft as well as by a the passionate Vul community.
-tfsecurity will continue to remain available for the time being, although our engineering attention will be directed at Vul going forward.
+2. Access to more integrations with tools and services through the rich ecosystem around Tunnel.
+3. Commercially supported by KhulnaSoft as well as by a the passionate Tunnel community.
+tfsecurity will continue to remain available for the time being, although our engineering attention will be directed at Tunnel going forward.
 
-## tfsecurity to Vul migration guide
+## tfsecurity to Tunnel migration guide
 
-For further information on how Vul compares to tfsecurity and moving from tfsecurity to Vul, do have a look at the [migration guide.](https://github.com/khulnasoft-lab/tfsecurity/blob/master/tfsecurity-to-vul-migration-guide.md)
+For further information on how Tunnel compares to tfsecurity and moving from tfsecurity to Tunnel, do have a look at the [migration guide.](https://github.com/khulnasoft-lab/tfsecurity/blob/master/tfsecurity-to-vul-migration-guide.md)
 
 ## tfsecurity
 

@@ -10,14 +10,14 @@ import (
 
 const transitionMsg = `
 ======================================================
-tfsecurity is joining the Vul family
+tfsecurity is joining the Tunnel family
 
 tfsecurity will continue to remain available 
 for the time being, although our engineering 
-attention will be directed at Vul going forward.
+attention will be directed at Tunnel going forward.
 
 You can read more here: 
-https://github.com/khulnasoft-lab/tfsecurity/discussions/1994
+https://github.com/khulnasoft-lab/tfsecurity/discussions/56
 ======================================================
 `
 
