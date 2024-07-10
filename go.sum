@@ -527,6 +527,8 @@ github.com/open-policy-agent/opa v0.55.0/go.mod h1:2Vh8fj/bXCqSwGMbBiHGrw+O8yrho
 github.com/owenrumney/go-sarif v1.1.1/go.mod h1:dNDiPlF04ESR/6fHlPyq7gHKmrM0sHUvAGjsoh8ZH0U=
 github.com/owenrumney/go-sarif/v2 v2.2.0 h1:1DmZaijK0HBZCR1fgcDSGa7VzYkU9NDmbZ7qC2QfUjE=
 github.com/owenrumney/go-sarif/v2 v2.2.0/go.mod h1:MSqMMx9WqlBSY7pXoOZWgEsVB4FDNfhcaXDA1j6Sr+w=
+github.com/owenrumney/go-sarif/v2 v2.3.3 h1:ubWDJcF5i3L/EIOER+ZyQ03IfplbSU1BLOE26uKQIIU=
+github.com/owenrumney/go-sarif/v2 v2.3.3/go.mod h1:MSqMMx9WqlBSY7pXoOZWgEsVB4FDNfhcaXDA1j6Sr+w=
 github.com/owenrumney/squealer v1.2.1 h1:4ryMMT59aaz8VMsqsD+FDkarADJz0F1dcq2fd0DRR+c=
 github.com/owenrumney/squealer v1.2.1/go.mod h1:7D0a/+Bouwy504YhaWsBYW73kyklSEq1MNf6zsNoTRg=
 github.com/pelletier/go-toml/v2 v2.0.6 h1:nrzqCb7j9cDFj2coyLNLaZuJTLjWjlaz6nvTvIwycIU=
